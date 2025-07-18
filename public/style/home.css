@@ -1,0 +1,204 @@
+.text-primary {
+    color: #f8f9fa;
+}
+
+.text-secondary {
+    color: #a8a8a8;
+}
+
+.text-accent {
+    color: #e6621f;
+}
+
+.bg-accent {
+    background: linear-gradient(135deg, #e6621f 0%, #ff7b3d 100%);
+}
+
+.bg-dark {
+    background: rgba(26, 26, 26, 0.9);
+}
+
+.bg-dark-card {
+    background: linear-gradient(135deg, rgba(42, 42, 42, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(230, 98, 31, 0.2);
+}
+
+.border-accent {
+    border-color: #e6621f;
+}
+
+.border-dark {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #e6621f 0%, #ff7b3d 100%);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 98, 31, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 98, 31, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(42, 42, 42, 0.8);
+    border: 2px solid #e6621f;
+    color: #e6621f;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #e6621f 0%, #ff7b3d 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 98, 31, 0.4);
+}
+
+.profile-card {
+    background: linear-gradient(135deg, rgba(42, 42, 42, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(230, 98, 31, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tech-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e6621f 0%, #ff7b3d 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    margin: 0 auto 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 98, 31, 0.3);
+}
+
+.tech-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(230, 98, 31, 0.5);
+}
+
+.skill-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.skill-fill {
+    background: linear-gradient(135deg, #e6621f 0%, #ff7b3d 100%);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 2s ease-in-out;
+}
+
+.glow-effect {
+    text-shadow: 0 0 20px rgba(230, 98, 31, 0.5);
+}
+
+.grid-pattern {
+    background-image:
+        linear-gradient(rgba(230, 98, 31, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230, 98, 31, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.circuit-line {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, #e6621f, transparent);
+    opacity: 0.3;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.data-stream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(230, 98, 31, 0.1) 50%, transparent 70%);
+    animation: dataFlow 4s linear infinite;
+}
+
+@keyframes dataFlow {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.hex-pattern {
+    background-image: radial-gradient(circle at 25px 25px, rgba(230, 98, 31, 0.1) 2px, transparent 2px);
+    background-size: 50px 50px;
+}
+
+.tech-badge {
+    background: linear-gradient(135deg, #e6621f 0%, #ff7b3d 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0.125rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 98, 31, 0.4);
+}

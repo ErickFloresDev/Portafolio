@@ -1,0 +1,337 @@
+/* Mejoras en el texto del logo */
+.font-tiktok-logo a {
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+/* Fuente TikTok Sans */
+.font-tiktok-logo {
+  font-family: "TikTok Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+.head-center a{
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.font-tiktok-head-center {
+  font-family: "TikTok Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+
+/* Para pantallas pequeñas */
+@media (max-width: 600px) {
+  .font-tiktok-logo {
+    font-size: 22px;
+  }
+}
+
+/* Sidebar */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-out;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Navbar superior mejorado */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2aa4 100%);
+  border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.btn-toggle {
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 6px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background: rgba(249, 115, 22, 0.2);
+  transform: scale(1.1);
+}
+
+/* Sidebar container mejorado */
+.sidebar,
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 18rem;
+  max-width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-left: 1px solid rgba(249, 115, 22, 0.2);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 50;
+  overflow-y: auto;
+}
+
+/* Header del sidebar */
+#sidebar .flex.justify-between.items-center {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+  border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#sidebar .flex.justify-between.items-center span {
+  color: #f97316;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#sidebar .flex.justify-between.items-center button {
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 6px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+#sidebar .flex.justify-between.items-center button:hover {
+  background: rgba(249, 115, 22, 0.2);
+  transform: scale(1.1);
+}
+
+/* Navegación del sidebar */
+#sidebar nav {
+  padding: 1rem;
+}
+
+#sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #9ca3af;
+  text-decoration: none;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background: rgba(42, 42, 42, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+#sidebar nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+#sidebar nav a:hover::before {
+  left: 100%;
+}
+
+#sidebar nav a:hover {
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
+}
+
+#sidebar nav a svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+  margin-right: 12px;
+}
+
+#sidebar nav a:hover svg {
+  stroke: #f97316;
+  transform: scale(1.1);
+}
+
+#sidebar nav a span {
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+#sidebar nav a:hover span {
+  font-weight: 600;
+}
+
+/* Efectos especiales para enlaces específicos */
+#sidebar nav a[href="/"] {
+  color: #ffffff;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+#sidebar nav a[href="/about"] {
+  color: #ffffff;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+#sidebar nav a[href="/proyect"] {
+  color: #ffffff;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+#sidebar nav a[href="/skills"] {
+  color: #ffffff;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);;
+}
+
+#sidebar nav a[href="/certifications"] {
+  color: #ffffff;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);;
+}
+
+#sidebar nav a[href="/contact"] {
+  color: #ffffff;
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+/* Animación para la aparición del sidebar */
+#sidebar.translate-x-full {
+  transform: translateX(100%);
+}
+
+#sidebar:not(.translate-x-full) {
+  transform: translateX(0);
+}
+
+/* Mejoras adicionales */
+#sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  border-radius: 3px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .font-tiktok-logo {
+    font-size: 20px;
+  }
+}
+
+/* Backdrop blur cuando el sidebar está abierto */
+body:not(.no-scroll) #sidebar:not(.translate-x-full)::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+/* Animaciones de entrada */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Hover effects para el logo en el navbar */
+.navbar a[href="/"] {
+  transition: all 0.3s ease;
+}
+
+.navbar a[href="/"]:hover {
+  transform: scale(1.05);
+}
+
+.navbar a[href="/"] svg {
+  transition: all 0.3s ease;
+}
+
+.navbar a[href="/"]:hover svg {
+  stroke: #f97316;
+}
+
