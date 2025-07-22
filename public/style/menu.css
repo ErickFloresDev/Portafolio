@@ -181,10 +181,10 @@
 }
 
 #sidebar nav a svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   transition: all 0.3s ease;
-  margin-right: 12px;
+  margin-right: 5px;
 }
 
 #sidebar nav a:hover svg {
@@ -221,7 +221,7 @@
   border-color: rgba(249, 115, 22, 0.3);
 }
 
-#sidebar nav a[href="/skills"] {
+#sidebar nav a[href="/study"] {
   color: #ffffff;
   background: rgba(249, 115, 22, 0.1);
   border-color: rgba(249, 115, 22, 0.3);;

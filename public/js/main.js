@@ -16,7 +16,7 @@ function render(path) {
 page('/', () => render('home'));
 page('/about', () => render('about'));
 page('/proyect', () => render('proyect'));
-page('/skills', () => render('skills'));
+page('/study', () => render('study'));
 page('/certifications', () => render('certifications'));
 page('/contact', () => render('contact'));
 
