@@ -4,6 +4,7 @@
 .card-bg {
     background: rgba(45, 45, 45, 0.8);
     backdrop-filter: blur(10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(230, 98, 31, 0.1);
 }
 .orange-gradient {
     background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);

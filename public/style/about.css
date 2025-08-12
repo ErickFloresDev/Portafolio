@@ -125,16 +125,6 @@
     50% { opacity: 0.8; width: 100%; }
 }
 
-.data-flow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent 30%, rgba(230, 98, 31, 0.1) 50%, transparent 70%);
-    animation: dataFlow 6s linear infinite;
-}
-
 @keyframes dataFlow {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
