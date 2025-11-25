@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Biker Cañete",
+    "role": "Director, Biker Cañete",
+    "avatar": "/img/biker-canete.webp",
+    "comment": "Un excelente trabajo en el desarrollo de nuestra plataforma. Muy profesional y siempre cumpliendo con los plazos.",
+    "company": "Biker Cañete"
+  },
+  {
+    "id": 2,
+    "name": "Fundacion NPH",
+    "role": "Gerente de Producto, Fundación NPH",
+    "avatar": "/img/nph.webp",
+    "comment": "Fue un verdadero placer colaborar con él. Comprendió a la perfección nuestra visión y la llevó a la realidad de manera muy efectiva.",
+    "company": "Fundación NPH"
+  },
+  {
+    "id": 3,
+    "name": "Valle Grande",
+    "role": "Coordinador de Proyectos, Valle Grande",
+    "avatar": "/img/vg.webp",
+    "comment": "Su habilidad técnica y creatividad fueron clave para el éxito del proyecto. Cumplió con los plazos establecidos.",
+    "company": "Valle Grande"
+  },
+  {
+    "id": 4,
+    "name": "Edulink",
+    "role": "Consultor, Edulink",
+    "avatar": "/img/edulink.webp",
+    "comment": "Desarrollador altamente competente, capaz de abordar desafíos complejos. Recomiendo su trabajo para proyectos importantes.",
+    "company": "Edulink"
+  },
+  {
+    "id": 5,
+    "name": "San Isidro Labrador",
+    "role": "Director de Marketing, San Isidro Labrador",
+    "avatar": "/img/san-isidro.webp",
+    "comment": "El sitio web que desarrolló para nosotros tuvo un impacto significativo en nuestras conversiones. Muy recomendable.",
+    "company": "San Isidro Labrador"
+  }
+]

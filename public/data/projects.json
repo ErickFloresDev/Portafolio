@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce",
+    "description": "Mi e-commerce permite mostrar y gestionar productos de forma eficiente, realizar pedidos en línea y calcular automáticamente el total a pagar, incluyendo un sistema de promociones integrado y búsqueda rápida para una mejor experiencia del usuario.",
+    "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Apps Script"],
+    "image": "/video/ecommerce.mp4",
+    "link": "https://sneaker-web-gold.vercel.app/",
+    "category": "Aplicación web"
+  },
+  {
+    "id": 2,
+    "title": "Sistema de Reservacion de Citas",
+    "description": "Sistema de agendamiento de citas que permite mostrar y gestionar los servicios que ofrece una persona o empresa, automatizando el cálculo del total a pagar según los servicios seleccionados, así como la administración de fechas, horarios y disponibilidad en tiempo real.",
+    "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Apps Script"],
+    "image": "/video/agenda.mp4",
+    "link": "https://barber-agendas.vercel.app/",
+    "category": "Aplicación web"
+  },
+  {
+    "id": 3,
+    "title": "Langing Page",
+    "description": "Diseño de landing enfocado en comunicar la esencia, misión y oferta educativa de la institución, brindando una experiencia informativa, moderna y accesible para estudiantes y padres de familia.",
+    "technologies": ["HTML", "CSS", "Tailwind CSS", "Javascript"],
+    "image": "/video/landing.mp4",
+    "link": "https://junniordeveloper.github.io/school_website.github.io/san-isidro.html",
+    "category": "web"
+  },
+  {
+    "id": 4,
+    "title": "ProTecnicos",
+    "description": "Sistema web que conecta técnicos especializados con clientes potenciales, permitiendo gestionar solicitudes, calificaciones, disponibilidad y seguimiento de servicios de forma centralizada.",
+    "technologies": ["HTML", "CSS", "Tailwind CSS", "Javascript", "React"],
+    "image": "/video/tech-conect.mp4",
+    "link": "",
+    "category": "MVP web"
+  }
+]
