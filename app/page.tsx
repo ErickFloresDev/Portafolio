@@ -21,9 +21,11 @@ import {
   Briefcase,
   GraduationCap,
   ArrowUpRight,
+  X,
 } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList, navigationMenuTriggerStyle, } from "@/components/ui/navigation-menu";
 
 // Tipos para los datos
 interface Project {
@@ -44,42 +46,6 @@ interface Testimonial {
   comment: string;
   company: string;
 }
-
-// Componente de navegación fuera del componente principal
-const NavMenu = ({ onNavigate }: { onNavigate: (sectionId: string) => void }) => (
-  <nav className="flex gap-12">
-    <button 
-      onClick={() => onNavigate("inicio")}
-      className="text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all duration-300 font-light"
-    >
-      INICIO
-    </button>
-    <button 
-      onClick={() => onNavigate("sobre-mi")}
-      className="text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all duration-300 font-light"
-    >
-      SOBRE MÍ
-    </button>
-    <button 
-      onClick={() => onNavigate("proyectos")}
-      className="text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all duration-300 font-light"
-    >
-      PROYECTOS
-    </button>
-    <button 
-      onClick={() => onNavigate("testimonios")}
-      className="text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all duration-300 font-light"
-    >
-      TESTIMONIOS
-    </button>
-    <button 
-      onClick={() => onNavigate("contacto")}
-      className="text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all duration-300 font-light"
-    >
-      CONTACTO
-    </button>
-  </nav>
-);
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -145,69 +111,121 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-[#efece3]">
+    <div className="min-h-screen bg-[#efece3] overflow-x-hidden">
       {/* Header / Navigation */}
       <header className="fixed top-0 left-0 right-0 bg-[#FAFAF8]/80 backdrop-blur-md border-b border-neutral-200/50 z-50">
-        <div className="max-w-6xl mx-auto px-8 py-6 flex items-center justify-between">
-          <h1 className="text-base font-light tracking-[0.3em] text-[#1A1A1A]">ERICK JUNIOR</h1>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+          <h1 className="text-sm sm:text-base font-medium tracking-[0.3em] text-[#1A1A1A]">ERICK JUNIOR</h1>
           
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <NavMenu onNavigate={scrollToSection} />
+          {/* Desktop Navigation con NavigationMenu */}
+          <div className="hidden lg:block">
+            <NavigationMenu>
+              <NavigationMenuList className="gap-1">
+                <NavigationMenuItem>
+                  <button 
+                    onClick={() => scrollToSection("inicio")}
+                    className={navigationMenuTriggerStyle() + " text-[13px] bg-transparent"}
+                  >
+                    INICIO
+                  </button>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <button 
+                    onClick={() => scrollToSection("sobre-mi")}
+                    className={navigationMenuTriggerStyle() + " text-[13px] bg-transparent"}
+                  >
+                    SOBRE MÍ
+                  </button>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <button 
+                    onClick={() => scrollToSection("proyectos")}
+                    className={navigationMenuTriggerStyle() + " text-[13px] bg-transparent"}
+                  >
+                    PROYECTOS
+                  </button>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <button 
+                    onClick={() => scrollToSection("testimonios")}
+                    className={navigationMenuTriggerStyle() + " text-[13px] bg-transparent"}
+                  >
+                    TESTIMONIOS
+                  </button>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <button 
+                    onClick={() => scrollToSection("contacto")}
+                    className={navigationMenuTriggerStyle() + " text-[13px] bg-transparent"}
+                  >
+                    CONTACTO
+                  </button>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Navigation - Sheet/Sidebar */}
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon" className="hover:bg-transparent">
-                <Menu className="h-4 w-4 text-neutral-600" />
+                <Menu className="h-5 w-5 text-neutral-600" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64 bg-[#FAFAF8]">
-               <DialogTitle className="sr-only">Menú de navegación</DialogTitle>
+            <SheetContent side="right" className="w-64 bg-[#FAFAF8] p-0">
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between p-6 border-b border-neutral-200">
+                  <DialogTitle className="text-sm font-light tracking-[0.2em]">MENÚ</DialogTitle>
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </SheetClose>
+                </div>
                 <DialogDescription className="sr-only">
                   Opciones de navegación del sitio
                 </DialogDescription>
-              <nav className="flex flex-col gap-6 mt-12">
-                <button 
-                  onClick={() => scrollToSection("inicio")}
-                  className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all font-light"
-                >
-                  INICIO
-                </button>
-                <button 
-                  onClick={() => scrollToSection("sobre-mi")}
-                  className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all font-light"
-                >
-                  SOBRE MÍ
-                </button>
-                <button 
-                  onClick={() => scrollToSection("proyectos")}
-                  className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all font-light"
-                >
-                  PROYECTOS
-                </button>
-                <button 
-                  onClick={() => scrollToSection("testimonios")}
-                  className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all font-light"
-                >
-                  TESTIMONIOS
-                </button>
-                <button 
-                  onClick={() => scrollToSection("contacto")}
-                  className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 transition-all font-light"
-                >
-                  CONTACTO
-                </button>
-              </nav>
+                <nav className="flex flex-col gap-1 p-4 flex-1">
+                  <button 
+                    onClick={() => scrollToSection("inicio")}
+                    className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all font-light px-4 py-3 rounded-sm"
+                  >
+                    INICIO
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("sobre-mi")}
+                    className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all font-light px-4 py-3 rounded-sm"
+                  >
+                    SOBRE MÍ
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("proyectos")}
+                    className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all font-light px-4 py-3 rounded-sm"
+                  >
+                    PROYECTOS
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("testimonios")}
+                    className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all font-light px-4 py-3 rounded-sm"
+                  >
+                    TESTIMONIOS
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("contacto")}
+                    className="text-left text-[13px] tracking-wide text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all font-light px-4 py-3 rounded-sm"
+                  >
+                    CONTACTO
+                  </button>
+                </nav>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
       </header>
 
-      <main>
+      <main className="w-full">
         {/* Hero Section */}
-        <section id="inicio" className="pt-20 px-8 lg:px-8 py-20 mt-5  flex items-center">
+        <section id="inicio" className="pt-20 px-4 sm:px-6 lg:px-8 py-20 mt-10 flex items-center w-full">
           <div className="max-w-6xl mx-auto w-full">
             <div className="grid md:grid-cols-2 mt-10 md:mt-0 gap-12 md:gap-24 items-center">
               
@@ -217,8 +235,8 @@ export default function Home() {
                   <Image
                     src="/perfil.webp"
                     alt="Erick Junior"
-                    width={600}
-                    height={600}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-cover opacity-90 mix-blend-luminosity"
                   />
                 </div>
@@ -242,21 +260,23 @@ export default function Home() {
 
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-4">
-                  <Button 
-                    onClick={() => scrollToSection("proyectos")}
-                    className="bg-[#1A1A1A] text-white hover:bg-[#2A2A2A] w-full sm:w-auto px-8 py-6 text-[13px] tracking-wide font-light rounded-none"
-                  >
-                    VER PROYECTOS
-                  </Button>
-                  
+                <div className="flex flex-col sm:flex-row items-center md:items-center gap-4 sm:gap-6 pt-4">
                   <Button 
                     onClick={() => scrollToSection("contacto")}
-                    variant="ghost" 
-                    className="text-[#1A1A1A] hover:bg-transparent hover:text-[#B4846C] w-full sm:w-auto px-8 py-6 text-[13px] tracking-wide font-light"
+                    className="bg-[#1A1A1A] text-white hover:bg-[#2A2A2A] w-full sm:w-auto px-8 py-6 text-[13px] tracking-wide font-light rounded-none"
                   >
                     CONTACTAR
                   </Button>
+                  
+                  <a href="/Erick Flores cv.pdf" target="_blank" rel="noopener noreferrer">
+                    <Button 
+                      variant="ghost" 
+                      className="text-[#1A1A1A] hover:bg-transparent hover:text-[#B4846C] w-full sm:w-auto px-8 py-6 text-[13px] tracking-wide font-light"
+                    >
+                      MOSTRAR CV
+                    </Button>
+                  </a>
+
                 </div>
 
                 <div className="flex justify-center md:justify-start gap-4 pt-8">
@@ -319,7 +339,7 @@ export default function Home() {
                   </div>
                   <div className="mt-6" data-aos="fade-left"> 
                     <Image
-                    src="/perfil.webp"
+                    src="/sobre-mi.png"
                     alt="Erick Junior"
                     width={600}
                     height={600}
@@ -689,20 +709,6 @@ export default function Home() {
                 </Button>
               </div>
             </form>
-
-            <div className="mt-16 flex justify-center gap-8" data-aos="fade-up">
-              <a href="https://www.linkedin.com/in/erick-flores-lizarbe/" className="text-[13px] text-[#6B6B6B] hover:text-[#B4846C] transition-colors font-light tracking-wide">
-                LinkedIn
-              </a>
-              <span className="text-[#6B6B6B]">•</span>
-              <a href="mailto:erick.junior.developer@gmail.com" className="text-[13px] text-[#6B6B6B] hover:text-[#B4846C] transition-colors font-light tracking-wide">
-                erick.junior.developer@gmail.com
-              </a>
-              <span className="text-[#6B6B6B]">•</span>
-              <a href="#" className="text-[13px] text-[#6B6B6B] hover:text-[#B4846C] transition-colors font-light tracking-wide">
-                GitHub
-              </a>
-            </div>
           </div>
         </section>
       </main>

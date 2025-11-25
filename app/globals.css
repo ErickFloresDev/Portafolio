@@ -4,6 +4,7 @@
 html {
   scroll-padding-top: 50px;
   scroll-behavior: smooth;
+  background-color: #24282b;
 }
 
 @custom-variant dark (&:is(.dark *));
