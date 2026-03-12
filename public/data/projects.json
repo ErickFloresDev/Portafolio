@@ -5,7 +5,7 @@
     "description": "Mi e-commerce permite mostrar y gestionar productos de forma eficiente, realizar pedidos en línea y calcular automáticamente el total a pagar, incluyendo un sistema de promociones integrado y búsqueda rápida para una mejor experiencia del usuario.",
     "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Apps Script"],
     "image": "/video/ecommerce.mp4",
-    "link": "https://sneaker-web-gold.vercel.app/",
+    "link": "https://development-ecommerce.vercel.app/",
     "category": "Aplicación web"
   },
   {
